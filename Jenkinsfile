@@ -4,7 +4,8 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t flask-app:latest .'
+                sh "DOCKER_BUILDKIT=1 docker build -t flask-app:latest ."
+
             }
         }
         stage('Deploy with Docker Compose') {
