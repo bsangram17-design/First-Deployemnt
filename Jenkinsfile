@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
+                sh 'ls -R'  // This will list all files in the console log
                 // The dot (.) at the end is mandatory
                 sh 'docker build -t flask-app:latest .'
             }
